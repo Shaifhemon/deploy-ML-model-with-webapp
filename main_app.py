@@ -1,23 +1,24 @@
 import numpy as np
-from flask import Flask, request, render_template
+from flask_ngrok import run_with_ngrok
+from flask import Flask, request, render_template, redirect, url_for
 import pickle
+from googletrans import Translator
 
 app = Flask(__name__)
-model = pickle.load(open('weight_pred_model.pkl', 'rb'))
+run_with_ngrok(app)
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
-@app.route('/getprediction',methods=['POST'])
-def getprediction():    
+@app.route('/getspeech',methods=['POST'])
+def getspeech():    
 
-    input = [float(x) for x in request.form.values()]
-    final_input = [np.array(input)]
-    prediction = model.predict(final_input)
+    input =  request.form["text"]
+    translator = Translator()
+    ar = translator.translate(input, dest='bn').text
 
-    return render_template('index.html', output='Predicted Weight in KGs :{}'.format(prediction))
-   
+    return render_template('index.html', output='your text :{}'.format(ar))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
