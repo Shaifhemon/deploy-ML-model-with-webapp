@@ -5,11 +5,11 @@
 
 <body>
  <div>
-	<h1>Predict Weight</h1>
+	<h1>Bangla TTS</h1>
 
-    <form action="{{ url_for('getprediction')}}"method="post">
-    	<input type="text" name="height" placeholder="Height" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">getprediction</button>
+    <form action="{{ url_for('getspeech')}}"method="post">
+    	<input type="text" name="text" placeholder="give a text" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Audio</button>
     </form>
 
    <br>
