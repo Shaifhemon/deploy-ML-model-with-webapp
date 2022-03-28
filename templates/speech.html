@@ -1,0 +1,19 @@
+<html >
+<head>
+  <title>Bangla TTS</title>  
+</head>
+
+<body>
+ <div>
+	<h1>Bangla TTS</h1>
+    <form action="{{ url_for('getspeech')}}">
+      <audio controls>
+        <source src="/content/tts_web/audio.wav" type="audio/wav">
+      </audio>
+    
+    </form>
+ </div>
+
+
+</body>
+</html>
