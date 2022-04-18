@@ -8,9 +8,13 @@
 	<h1>Bangla TTS</h1>
 
     <form action="{{ url_for('getspeech')}}"method="post">
-    	<input type="text" name="text" placeholder="give a text" required="required" />
+    	<input type="text" name="text" placeholder="give a text" required="required" /><br>
+      Sad<input type="radio" name="emotion" value="1" /><br>
+      Angry<input type="radio" name="emotion" value="1" /><br>
+      Poem<input type="radio" name="emotion" value="1" /><br>
         <button type="submit" class="btn btn-primary btn-block btn-large">Audio</button>
     </form>
+
 
    <br>
    <br>
