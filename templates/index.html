@@ -9,12 +9,16 @@
 
      <form action="{{ url_for('getspeech')}}"method="post">
     	<input type="text" name="text" placeholder="give a text" required="required" /><br>
-      Sad<input type="radio" name="emotion" value="1" /><br>
-      Neutral<input type="radio" name="emotion" value="2" /><br>
-      Happy<input type="radio" name="emotion" value="3" /><br>
-        <button type="submit" class="btn btn-primary btn-block btn-large">Audio</button>
-    </form>
 
+      Sad<input type="radio" name="emotion" value="sad" />
+      <label for="sad">Sad</label><br>
+      Neutral<input type="radio" name="emotion" value="neutral" />
+      <label for="neutral">Neutral</label><br>
+      Happy<input type="radio" name="emotion" value="happy" />
+      <label for="happy">Happy</label><br>
+      
+      <button type="submit" class="btn btn-primary btn-block btn-large">Audio</button>
+    </form>
 
    <br>
    <br>
